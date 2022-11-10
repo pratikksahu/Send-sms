@@ -25,6 +25,7 @@
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_gravity="center|end"
+        android:backgroundTint="@color/purple_200"
         android:src="@drawable/ic_desc" />
 
 </LinearLayout>
