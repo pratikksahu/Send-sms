@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
@@ -37,7 +38,7 @@ class FragmentAddContactDialog: DialogFragment(),View.OnClickListener{
     lateinit var fnameET:EditText
     lateinit var lnameET:EditText
     lateinit var numberET:EditText
-
+    lateinit var codeTV:TextView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,6 +49,7 @@ class FragmentAddContactDialog: DialogFragment(),View.OnClickListener{
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.buttonSave.setOnClickListener(this)
+        codeTV = binding.codeTV
         fnameET = binding.fnameET
         lnameET = binding.lnameET
         numberET = binding.numberET
@@ -58,7 +60,7 @@ class FragmentAddContactDialog: DialogFragment(),View.OnClickListener{
             lname = it.toString()
         }
         numberET.addTextChangedListener {
-            number = it.toString()
+            number = codeTV.text.toString() + it.toString()
         }
         super.onViewCreated(view, savedInstanceState)
     }

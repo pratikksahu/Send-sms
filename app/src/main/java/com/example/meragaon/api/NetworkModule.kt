@@ -21,9 +21,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    const val username = "AC9e82334f9d08597429d553b0aae0c432"
-    private const val password = "6f41e6a08a1bdfb5e61caddaf8253514"
-    private const val BASE_URL = "https://api.twilio.com"
+    const val username = APIKEYS.USERNAME
+    private const val password = APIKEYS.PASSWORD
+    private const val BASE_URL = APIKEYS.BASE_URL
 
     @Singleton
     @Provides
