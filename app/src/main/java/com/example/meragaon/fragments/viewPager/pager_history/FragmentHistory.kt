@@ -104,10 +104,16 @@ class FragmentHistory: Fragment(){
     private fun setupViewModel(){
 
         viewModelHistory.smsHistory.observe(viewLifecycleOwner){
-            if(it?.isNotEmpty() == true)
-            rvSmsSentAdapter.items = it
-            else
+            if(it?.isNotEmpty() == true){
+                rvSmsSentAdapter.items = it
+                binding.rvSmsHistory.visibility = View.VISIBLE
+                binding.emptyTV.visibility = View.GONE
+            }
+            else {
                 rvSmsSentAdapter.items = emptyList()
+                binding.rvSmsHistory.visibility = View.GONE
+                binding.emptyTV.visibility = View.VISIBLE
+            }
         }
     }
 
