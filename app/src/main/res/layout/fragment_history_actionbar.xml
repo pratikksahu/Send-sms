@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/history_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:layout_weight="3"
+    android:orientation="horizontal"
+    android:visibility="visible">
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Search name"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/button_sort"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_gravity="center|end"
+        android:src="@drawable/ic_desc" />
+
+</LinearLayout>

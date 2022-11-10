@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.meragaon.fragments.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentContactDetails"
+            app:destination="@id/fragmentContactDetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentAddContactDialog"
+            app:destination="@id/fragmentAddContactDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentContactDetails"
+        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentContactDetails"
+        android:label="FragmentContactDetails"
+        tools:layout="@layout/fragment_contact_detail">
+        <argument
+            android:name="contacts"
+            app:argType="com.example.meragaon.data.Contact$Contacts"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentContactDetails_to_fragmentDialog"
+            app:destination="@id/fragmentDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/fragmentDialog"
+        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentDialog"
+        android:label="FragmentDialog" >
+        <argument
+            android:name="contacts"
+            app:argType="com.example.meragaon.data.Contact$Contacts"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_fragmentDialog_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </dialog>
+    <dialog
+        android:id="@+id/fragmentAddContactDialog"
+        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentAddContactDialog"
+        android:label="FragmentAddContactDialog" />
+</navigation>
