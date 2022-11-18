@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.meragaon'
+    namespace 'com.example.sendsms'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.meragaon"
+        applicationId "com.example.sendsms"
         minSdk 24
         targetSdk 33
         versionCode 1
