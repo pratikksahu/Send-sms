@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.meragaon.data.Contact.Contacts" />
+            type="com.example.sendsms.data.Contact.Contacts" />
     </data>
 
     <androidx.cardview.widget.CardView

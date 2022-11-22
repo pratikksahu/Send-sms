@@ -13,7 +13,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sendsms"
+        applicationId "com.example.senssms"
         minSdk 24
         targetSdk 33
         versionCode 1

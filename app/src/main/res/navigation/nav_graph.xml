@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.example.meragaon.fragments.FragmentHome"
+        android:name="com.example.sendsms.fragments.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentContactDetails"
-        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentContactDetails"
+        android:name="com.example.sendsms.fragments.viewPager.pager_contacts.FragmentContactDetails"
         android:label="FragmentContactDetails"
         tools:layout="@layout/fragment_contact_detail">
         <argument
@@ -36,7 +36,7 @@
     </fragment>
     <dialog
         android:id="@+id/fragmentDialog"
-        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentDialog"
+        android:name="com.example.sendsms.fragments.viewPager.pager_contacts.FragmentDialog"
         android:label="FragmentDialog" >
         <argument
             android:name="contacts"
@@ -48,6 +48,6 @@
     </dialog>
     <dialog
         android:id="@+id/fragmentAddContactDialog"
-        android:name="com.example.meragaon.fragments.viewPager.pager_contacts.FragmentAddContactDialog"
+        android:name="com.example.sendsms.fragments.viewPager.pager_contacts.FragmentAddContactDialog"
         android:label="FragmentAddContactDialog" />
 </navigation>

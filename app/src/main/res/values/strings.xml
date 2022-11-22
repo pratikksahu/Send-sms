@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Send sms</string>
+    <string name="app_name">Send Sms</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Notice">Phone number needs to be verified in trial account, otherwise message won\'t be sent. For the submission I have disabled the OTP sent check, so the app will still function as if the message is sent to test the local database.</string>
