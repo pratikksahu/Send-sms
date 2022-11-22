@@ -9,13 +9,18 @@ import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,10 +46,9 @@ class FragmentDialog:DialogFragment() {
     private val parentNavController
         get() = requireParentFragment().findNavController()
     val args: FragmentDialogArgs by navArgs()
-    var message:String = ""
-
+    lateinit var message:String
     private val _text = mutableStateOf("Send")
-    val text: State<String> = _text
+    var text: State<String> = _text
     @Inject
     internal lateinit var viewModelFragmentDialogFactory: ViewModelFragmentDialogFactory
 
@@ -56,7 +60,6 @@ class FragmentDialog:DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         setupViewModel()
     }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
         message = "Hi , Your OTP is ${generateOTP()}"
@@ -64,24 +67,23 @@ class FragmentDialog:DialogFragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 Column(modifier = Modifier.fillMaxWidth()) {
-                    Text(
-                        text = "Send otp",
-                        textAlign = TextAlign.Center,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
+                    var localmessage by remember { mutableStateOf(TextFieldValue("")) }
+                    OutlinedTextField(
+                        value = localmessage,
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(30.dp),
+                            .padding(start = 30.dp, end = 30.dp, bottom = 30.dp,top = 30.dp),
+                        label = { Text(
+                            text = "Enter your message",
+                            textAlign = TextAlign.Center,
+                            fontSize = 18.sp,
+//                            modifier = Modifier
+//                                .padding(start = 30.dp, end = 30.dp, bottom = 30.dp),
+                        ) },
+                        onValueChange = {
+                            localmessage = it
+                            message = it.text
+                        }
                     )
-                    Text(
-                        text = message,
-                        textAlign = TextAlign.Center,
-                        fontSize = 18.sp,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 30.dp, end = 30.dp, bottom = 30.dp),
-                    )
-
                     Row(
                         modifier = Modifier
                             .background(Color.Gray)
@@ -123,6 +125,17 @@ class FragmentDialog:DialogFragment() {
                 }
             }
         }
+    }
+    @Composable
+    fun OutLineTextFieldSample() {
+        var text by remember { mutableStateOf(TextFieldValue("")) }
+        OutlinedTextField(
+            value = text,
+            label = { Text(text = "Enter Your Name") },
+            onValueChange = {
+                text = it
+            }
+        )
     }
 
     private fun setupViewModel(){

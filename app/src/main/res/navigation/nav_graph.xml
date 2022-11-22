@@ -28,7 +28,7 @@
         tools:layout="@layout/fragment_contact_detail">
         <argument
             android:name="contacts"
-            app:argType="com.example.meragaon.data.Contact$Contacts"
+            app:argType="com.example.sendsms.data.Contact$Contacts"
             app:nullable="true" />
         <action
             android:id="@+id/action_fragmentContactDetails_to_fragmentDialog"
@@ -40,7 +40,7 @@
         android:label="FragmentDialog" >
         <argument
             android:name="contacts"
-            app:argType="com.example.meragaon.data.Contact$Contacts"
+            app:argType="com.example.sendsms.data.Contact$Contacts"
             app:nullable="true" />
         <action
             android:id="@+id/action_fragmentDialog_to_fragmentHome"
